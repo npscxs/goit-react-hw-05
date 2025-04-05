@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DotLoader from "react-spinners/DotLoader";
 import { fetchReviewsMovieById, makeSrcForPoster } from "../../api/apiServer";
-
+import Error from "../error/Error";
 import styles from "./MovieReviews.module.css";
 
 export default function MovieReviews() {

@@ -3,7 +3,7 @@ import DotLoader from "react-spinners/DotLoader";
 import { fetchTrendingMovies } from "../api/apiServer";
 
 import Error from "../components/error/Error";
-import MovieList from "../components/moviesList/MoviesList";
+import MovieList from "../components/movieList/MovieList";
 
 export default function HomePage() {
   const [trandingMovies, setTrandingMovies] = useState(null);

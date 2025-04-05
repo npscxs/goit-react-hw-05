@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import DotLoader from "react-spinners/DotLoader";
 import { fetchSearchMovie } from "../api/apiServer";
-
-import MovieList from "../components/moviesList/MoviesList";
+import MovieList from "../components/movieList/MovieList";
 import Input from "../components/input/Input";
+import Error from "../components/error/Error";
 
 export default function MoviesPage() {
-  const [searchingMovies, setSearchingMovies] = useState(null);
+  const [searchingMovies, setSearchingMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [searchParams, setSerachParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") ?? "";
 
   const handleSupmit = (query) => {
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("query", query);
-    setSerachParams(newSearchParams);
+    setSearchParams(newSearchParams);
   };
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function MoviesPage() {
         (searchingMovies.length > 0 ? (
           <MovieList movies={searchingMovies} />
         ) : (
-          <p>Not Faund movies...</p>
+          <p>Not Found movies...</p>
         ))}
     </>
   );
