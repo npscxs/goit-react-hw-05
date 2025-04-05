@@ -1,8 +1,6 @@
 .wrapper {
   margin: 20px 0;
   padding: 10px 0;
-  border-top: 1px solid #212121;
-  border-bottom: 1px solid #212121;
 }
 .title {
   margin: 0;
@@ -18,12 +16,12 @@
 }
 .link {
   padding: 7px 7px 2px;
-  color: blue;
+  color: #0ab62d;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   transition: color 250ms ease-in-out;
 }
 .link:hover {
-  color: #007bff;
+  color: #51126f;
 }
